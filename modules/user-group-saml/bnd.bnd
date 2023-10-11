@@ -1,0 +1,3 @@
+Bundle-Name: user-group-saml
+Bundle-SymbolicName: com.liferay.samples.fbo.saml.mapping
+Bundle-Version: 1.0.0
