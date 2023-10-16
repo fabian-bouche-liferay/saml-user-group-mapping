@@ -49,10 +49,10 @@ public class OIDCUserGroupMappingPostLoginAction implements LifecycleAction {
 				OpenIdConnectSession openIdConnectSession = _openIdConnectSessionLocalService.getOpenIdConnectSession(openIdConnectSessionId);
 				String idToken = openIdConnectSession.getIdToken();
 				
-	            JWT jwt = JWTParser.parse(idToken);
-	            JWTClaimsSet claimsSet = jwt.getJWTClaimsSet();
-	            JSONArray groupClaimsArray = (JSONArray) claimsSet.getClaim("member");
-	            groupClaimsArray.forEach(groupClaim -> {
+				JWT jwt = JWTParser.parse(idToken);
+				JWTClaimsSet claimsSet = jwt.getJWTClaimsSet();
+				JSONArray groupClaimsArray = (JSONArray) claimsSet.getClaim("member");
+				groupClaimsArray.forEach(groupClaim -> {
 					String userGroupName = groupClaim.toString().replace("/", "");
 					UserGroup userGroup;
 					try {
@@ -63,7 +63,7 @@ public class OIDCUserGroupMappingPostLoginAction implements LifecycleAction {
 							_log.error("Failed to find user group " + userGroupName, e);
 						}
 					}
-	            });
+				});
 
 			} catch (PortalException e) {
 				_log.error("Failed to get openid connect session", e);
