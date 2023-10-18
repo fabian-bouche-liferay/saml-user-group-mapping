@@ -1,4 +1,14 @@
 Bundle-Name: oidc-logout
 Bundle-SymbolicName: com.liferay.samples.fbo.oidc.logout
 Bundle-Version: 1.0.0
-Export-Package: com.liferay.samples.fbo.oidc.logout.api
+
+-fixupmessages "Classes found in the wrong directory"; restrict:=error; is:=warning
+
+Import-Package:\
+	!com.google.crypto.tink.*,\
+	!net.shibboleth.utilities.*,\
+	!org.bouncycastle.*,\
+	!org.cryptomator.siv.*,\
+	!org.joda.time.*,\
+	!org.opensaml.*,\
+	*
