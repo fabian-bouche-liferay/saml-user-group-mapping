@@ -1,0 +1,3 @@
+Bundle-Name: oidc-login-redirect-filter
+Bundle-SymbolicName: com.liferay.samples.fbo.oidc.redirect
+Bundle-Version: 1.0.0
